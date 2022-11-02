@@ -1,0 +1,33 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>getJSON example</title>
+</head>
+<body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+            $(function() {
+              $('#test').bind('click', function() {
+                $.getJSON('/background_process_test',
+                    function(data) {});
+                return false;
+              });
+            });
+    </script>
+
+    <script>
+        function clickDisplayAlert() {
+            console.log("ボタンがクリックされました");
+        }
+    </script>
+
+    <div class='container'>
+        <h3>Test</h3>
+            <form>
+                <button class='btn btn-default' id="test" onclick="clickDisplayAlert()">Test</button>
+            </form>
+    </div>
+</body>
+</html>
